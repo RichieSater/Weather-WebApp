@@ -6,7 +6,8 @@ const hbs = require('hbs')
 const path = require('path')
 
 //Setup Express
-const app = express() 
+const app = express()
+const port = process.env.PORT || 3000
 
 //Use Path to Set Up Public Dir OS Friendly (__dirname is the path to the folder that this file lives in)
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -110,6 +111,6 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('Server online on port 3000')
+app.listen(port, () => {
+    console.log('Server online on port '+ port)
 })
